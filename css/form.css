@@ -1,0 +1,118 @@
+/* Khung nền tối bao quanh modal */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Hộp thoại form trắng ở giữa - Làm nổi khối bằng hiệu ứng đổ bóng */
+.modal-content {
+    width: 500px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    /* Tạo chiều sâu nổi khối */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); 
+}
+
+/* Tiêu đề Form */
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333333;
+    text-align: center;
+}
+
+/* Từng dòng bao gồm Nhãn và Ô nhập liệu */
+.group {
+    margin-bottom: 14px;
+}
+
+/* Chữ hiển thị nhãn (Mã phiếu, Họ tên...) */
+.group label {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #444444;
+}
+
+/* ĐỒNG BỘ TẤT CẢ các ô nhập liệu cho ĐỀU NHAU và ĐẸP HƠN */
+.group input[type="text"],
+.group input[type="date"],
+.group select,
+.group textarea {
+    width: 100%;         
+    padding: 10px;           
+    border: 1px solid #ccc; 
+    border-radius: 6px;    
+    background-color: #fcfcfc; 
+    font-size: 14px;
+    box-sizing: border-box;  
+    outline: none;        
+    transition: all 0.2s;    
+}
+
+/* Hiệu ứng ĐỔI MÀU viền và làm NỔI BẬT khi người dùng click chuột vào ô */
+.group input:focus,
+.group select:focus,
+.group textarea:focus {
+    border-color: #007bff;   
+    background-color: #fff;  
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+/* Định dạng riêng cho ô Ghi chú */
+.group textarea {
+    height: 70px;
+    resize: none;            /* Không cho kéo giãn lung tung làm hỏng form */
+}
+
+/* Cụm nút bấm ở cuối */
+.btn-group {
+    margin-top: 20px;
+    text-align: right;       /* Đẩy nút về bên phải cho chuyên nghiệp */
+}
+
+/* Kiểu dáng chung cho nút bấm */
+.btn-group button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Nút LƯU - màu xanh dương nổi bật */
+.btn-group button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-group button[type="submit"]:hover {
+    background-color: #0056b3; 
+}
+
+/* Nút HỦY - màu xám nhẹ nhàng */
+.btn-group button#btnClose {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.btn-group button#btnClose:hover {
+    background-color: #d4d4d4;
+}
+
+/* Thông báo lỗi validation */
+.error {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+}

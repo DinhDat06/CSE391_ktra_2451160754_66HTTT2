@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản Lý Phiếu Mượn</title>
+
+    <link rel="stylesheet" href="css/giaodien.css">
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>QUẢN LÝ PHIẾU MƯỢN SÁCH</h1>
+
+        <!-- Thống kê -->
+        <div class="stats">
+
+            <div class="card">
+                <h3>Tổng Phiếu</h3>
+                <span id="tongPhieu">0</span>
+            </div>
+
+            <div class="card">
+                <h3>Đang Mượn</h3>
+                <span id="dangMuon">0</span>
+            </div>
+
+            <div class="card">
+                <h3>Đã Trả</h3>
+                <span id="daTra">0</span>
+            </div>
+
+        </div>
+
+        <button id="btnThem">
+            Thêm Phiếu Mượn
+        </button>
+
+        <!-- Bảng -->
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Mã Phiếu</th>
+                    <th>Người Mượn</th>
+                    <th>Mã Sách</th>
+                    <th>Thể Loại</th>
+                    <th>Trạng Thái</th>
+                    <th>Thao Tác</th>
+                </tr>
+            </thead>
+
+            <tbody id="borrowTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="borrowModal">
+
+        <div class="modal-content">
+
+            <h2>Thông Tin Phiếu Mượn</h2>
+
+            <form id="borrowForm">
+
+                <input type="hidden" id="editIndex">
+
+                <div class="group">
+                    <label>Mã Phiếu</label>
+                    <input type="text" id="borrowId" name="borrowId">
+                </div>
+
+                <div class="group">
+                    <label>Họ Tên</label>
+                    <input type="text" id="borrower" name="borrower">
+                </div>
+
+                <div class="group">
+                    <label>Mã Sách</label>
+                    <input type="text" id="bookId" name="bookId">
+                </div>
+
+                <div class="group">
+                    <label>Thể Loại</label>
+
+                    <select id="category" name="category">
+                        <option value="">Chọn</option>
+                        <option>CNTT</option>
+                        <option>Kinh tế</option>
+                        <option>Ngoại ngữ</option>
+                        <option>Kỹ năng</option>
+                    </select>
+                </div>
+
+                <div class="group">
+                    <label>Ngày Mượn</label>
+                    <input type="date" id="borrowDate" name="borrowDate">
+                </div>
+
+                <div class="group">
+                    <label>Hạn Trả</label>
+                    <input type="date" id="dueDate" name="dueDate">
+                </div>
+
+                <div class="group">
+                    <label>SĐT</label>
+                    <input type="text" id="phone" name="phone">
+                </div>
+
+                <div class="group">
+                    <label>Email</label>
+                    <input type="text" id="email" name="email">
+                </div>
+
+                <div class="group">
+                    <label>Trạng Thái</label>
+
+                    <select id="status" name="status">
+                        <option value="">Chọn</option>
+                        <option>Đang mượn</option>
+                        <option>Đã trả</option>
+                    </select>
+                </div>
+
+                <div class="group">
+                    <label>Ghi Chú</label>
+                    <textarea id="note" name="note"></textarea>
+                </div>
+
+                <div class="btn-group">
+                    <button type="submit">
+                        Lưu
+                    </button>
+
+                    <button type="button" id="btnClose">
+                        Hủy
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/render.js"></script>
+    <script src="js/validate.js"></script>
+    <script src="js/sukien.js"></script>
+
+</body>
+</html>

@@ -4,14 +4,17 @@ $(document).ready(function(){
 
     renderTable();
 
-    $("#btnThem").click(function(){
+ $("#btnThem").click(function(){
+    $("#borrowForm")[0].reset();
+    $("#editIndex").val(""); // Đưa về trống để hiểu là Thêm mới
+    $("#borrowId").prop("disabled", false); // Mở khóa mã phiếu khi thêm mới
+    
+    // Xóa bỏ các thông báo lỗi cũ
+    let validator = $("#borrowForm").validate();
+    validator.resetForm();
 
-        $("#borrowForm")[0].reset();
-
-        $("#editIndex").val("");
-
-        $("#borrowModal").css("display","flex");
-    });
+    $("#borrowModal").css("display", "flex");
+});
 
     $("#btnClose").click(function(){
 

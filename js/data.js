@@ -65,6 +65,7 @@ function initData() {
                 status: "Đang mượn",
                 note: ""
             }
+
         ];
 
         localStorage.setItem(KEY, JSON.stringify(sampleData));
